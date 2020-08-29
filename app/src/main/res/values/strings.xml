@@ -2,6 +2,7 @@
     <string name="app_name">CountryTriviaApp</string>
     <string name="login">Login</string>
     <string name="selection">Select a subject</string>
+    <string name="login_string">Login</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="register">Register</string>
@@ -12,4 +13,9 @@
     <string name="back">Back</string>
     <string name="email">Email</string>
     <string name="registration">Registration</string>
+    <string name="not_a_member___signin_string">not a member ? SignIn</string>
+    <string name="already_a_member___login_string">already a member ? login</string>
+    <string name="login_ek1_string">login</string>
+    <string name="signin_string">Singin</string>
+    <string name="todo">TODO</string>
 </resources>

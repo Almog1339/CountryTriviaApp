@@ -30,8 +30,6 @@ public class MainActivity extends FragmentActivity {
             }
         });
 
-        Button moveToLoginBtn = findViewById(R.id.mainFragment_login_button);
-        Button selectSubjectBtn = findViewById(R.id.mainFragment_subject_button);
         FrameLayout container = findViewById(R.id.mainActivity_MainFrame_FrameLayout);
 
         // Check that the activity is using the layout version with

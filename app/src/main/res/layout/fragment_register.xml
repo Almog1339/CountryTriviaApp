@@ -1,106 +1,139 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Fragments.RegisterFragment">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:isScrollContainer="false"
+    android:overScrollMode="never"
+    android:persistentDrawingCache="none"
+    android:scrollbarAlwaysDrawHorizontalTrack="false"
+    android:scrollbarAlwaysDrawVerticalTrack="false"
+    android:scrollbars="none"
+    app:layout_scrollFlags="noScroll">
+    <!--
+    /*
+     *	This content is generated from the API File Info.
+     *	(Alt+Shift+Ctrl+I).
+     *
+     *	@desc
+     *	@file 		google_pixel_3xl___1
+     *	@date 		0
+     *	@title 		Google Pixel 3XL  1
+     *	@author
+     *	@keywords
+     *	@generator 	Export Kit v1.3.xd
+     *
+     */
+    -->
+    <ScrollView
+        android:id="@+id/google_pixel_3xl___2"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:background="#00FFFFFF">
+        android:isScrollContainer="false"
+        android:overScrollMode="never"
+        android:persistentDrawingCache="none"
+        android:scrollbars="none">
 
-        <TextView
-            android:id="@+id/textView"
+        <RelativeLayout
+            android:id="@+id/content_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="casual"
-            android:text="@string/AppName"
-            android:textSize="36sp"
-            app:layout_constraintBottom_toTopOf="@+id/registrationFragment_email_textView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:isScrollContainer="false"
+            android:overScrollMode="never"
+            android:persistentDrawingCache="none"
+            android:scrollbars="none">
 
-        <EditText
-            android:id="@+id/registrationFragment_email_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:autofillHints=""
-            android:ems="10"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.389" />
+            <View
+                android:id="@+id/ellipse_3"
+                android:layout_width="770dp"
+                android:layout_height="1004dp"
+                android:layout_marginStart="-40dp"
+                android:layout_marginTop="-350dp"
+                android:background="@drawable/ellipse_3_shape" />
 
-        <EditText
-            android:id="@+id/registrationFragment_passwordTwo_passwordTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/password"
-            android:importantForAutofill="no"
-            android:inputType="textPassword"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/registrationFragment_passwordOne_passwordTextView"
-            app:layout_constraintVertical_bias="0.087" />
+            <Button
+                android:id="@+id/registrationFragment_register_button"
+                android:layout_width="175dp"
+                android:layout_height="37dp"
+                android:layout_marginStart="119dp"
+                android:layout_marginTop="513dp"
+                android:background="@drawable/rectangle_2_shape"
+                android:text="@string/register" />
 
-        <EditText
-            android:id="@+id/registrationFragment_passwordOne_passwordTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/password"
-            android:importantForAutofill="no"
-            android:inputType="textPassword"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/registrationFragment_email_textView"
-            app:layout_constraintVertical_bias="0.056" />
+            <ImageButton
+                android:id="@+id/registrationFragment_back_button"
+                android:layout_width="63dp"
+                android:layout_height="57dp"
+                android:layout_alignEnd="@+id/registrationFragment_register_button"
+                android:layout_alignBottom="@+id/ellipse_4"
+                android:layout_marginEnd="219dp"
+                android:layout_marginBottom="39dp"
+                android:background="@drawable/ellipse_3_shape"
+                android:src="@drawable/abc_vector_test"
+                tools:ignore="PrivateResource" />
 
-        <Button
-            android:id="@+id/registrationFragment_register_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@string/register"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.758"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/registrationFragment_passwordTwo_passwordTextView" />
+            <TextView
+                android:id="@+id/signin"
+                android:layout_width="104dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="163dp"
+                android:layout_marginTop="61dp"
+                android:text="@string/signin_string"
+                android:textColor="@color/login_color"
+                android:textSize="36sp" />
 
-        <Button
-            android:id="@+id/registrationFragment_back_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@string/back"
-            app:layout_constraintEnd_toStartOf="@+id/registrationFragment_register_button"
-            app:layout_constraintHorizontal_bias="0.475"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/registrationFragment_passwordTwo_passwordTextView" />
+            <View
+                android:id="@+id/ellipse_4"
+                android:layout_width="926dp"
+                android:layout_height="1105dp"
+                android:layout_marginStart="-64dp"
+                android:layout_marginTop="-375dp"
+                android:alpha="0.54117647058824"
+                android:background="@drawable/ellipse_4_shape" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/baumans"
-            android:text="@string/registration"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/registrationFragment_email_textView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            tools:text="registration" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+            <EditText
+                android:id="@+id/registrationFragment_email_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/signin"
+                android:layout_alignStart="@+id/signin"
+                android:layout_alignEnd="@+id/signin"
+                android:layout_marginStart="-51dp"
+                android:layout_marginTop="76dp"
+                android:layout_marginEnd="-55dp"
+                android:ems="10"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:autofillHints="" />
+
+            <EditText
+                android:id="@+id/registrationFragment_passwordOne_passwordTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/registrationFragment_email_textView"
+                android:layout_alignStart="@+id/signin"
+                android:layout_alignEnd="@+id/signin"
+                android:layout_marginStart="-51dp"
+                android:layout_marginTop="39dp"
+                android:layout_marginEnd="-54dp"
+                android:ems="10"
+                android:hint="@string/password"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/registrationFragment_passwordTwo_passwordTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/registrationFragment_email_textView"
+                android:layout_alignStart="@+id/signin"
+                android:layout_alignEnd="@+id/signin"
+                android:layout_marginStart="-51dp"
+                android:layout_marginTop="118dp"
+                android:layout_marginEnd="-52dp"
+                android:ems="10"
+                android:hint="@string/password"
+                android:inputType="textPassword" />
+        </RelativeLayout>
+
+    </ScrollView>
+</HorizontalScrollView>
