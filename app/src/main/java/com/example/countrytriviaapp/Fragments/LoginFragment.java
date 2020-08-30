@@ -1,19 +1,21 @@
 package com.example.countrytriviaapp.Fragments;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
 
 import com.example.countrytriviaapp.Activities.MainActivity;
 import com.example.countrytriviaapp.R;
@@ -24,7 +26,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Objects;
-import java.util.concurrent.Executor;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -35,6 +36,7 @@ public class LoginFragment extends Fragment {
 
     public Button loginBtn;
     public Button registerBtn;
+    public TextView passwordTxt;
     public TextView emailTxt;
     private FirebaseAuth mAuth;
     // TODO: Rename parameter arguments, choose names that match
@@ -82,20 +84,25 @@ public class LoginFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         mAuth = FirebaseAuth.getInstance();
+
+
         View view = inflater.inflate(R.layout.fragment_login, container, false);
         emailTxt = view.findViewById(R.id.loginFragment_email_textInput);
-        final TextView passwordTxt = view.findViewById(R.id.loginFragment_password_textInput);
+        passwordTxt = view.findViewById(R.id.loginFragment_password_textInput);
         loginBtn = view.findViewById(R.id.loginFragment_Login_button);
         registerBtn = view.findViewById(R.id.loginFragment_Register_Button);
-
-
 
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(),"Test",Toast.LENGTH_SHORT).show();
-                signIn(emailTxt.getText().toString(),passwordTxt.getText().toString());
+                String email = emailTxt.getText().toString();
+                String pass = passwordTxt.getText().toString();
+                if (!email.equals(String.valueOf("")) && !pass.equals(String.valueOf("")))
+                    signIn(emailTxt.getText().toString().trim(), passwordTxt.getText().toString());
+                else {
+                    Toast.makeText(getContext(), "Email and Password are blank", Toast.LENGTH_LONG).show();
+                }
             }
         });
         registerBtn.setOnClickListener(new View.OnClickListener() {
@@ -109,11 +116,10 @@ public class LoginFragment extends Fragment {
         });
 
 
-
         return view;
     }
 
-    private void signIn(String email,String password){
+    private void signIn(final String email, final String password) {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(Objects.requireNonNull(getActivity()), new OnCompleteListener<AuthResult>() {
                     @Override
@@ -121,13 +127,17 @@ public class LoginFragment extends Fragment {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Log.d("Firebase", "signInWithEmail:success "+ mAuth.getUid());
+                            SharedPreferences sharedPreferences = (SharedPreferences) Objects.requireNonNull(getActivity()).getSharedPreferences(MainActivity.USER_INFO_SP, Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString("UID",mAuth.getUid()).putString("Email", email).putString("Password", password).apply();
+
+                            MainActivity main = (MainActivity) getActivity();
+                            assert main != null;
+                            main.mainFragmentManager(new QuestionsFragment());
                         } else {
                             // If sign in fails, display a message to the user.
-                            Log.d("Firebase", "signInWithEmail:unsuccessful!!!" );
+                            Log.d("Firebase", "signInWithEmail:unsuccessful!!!");
                         }
-
-                        // ...
                     }
                 });
     }

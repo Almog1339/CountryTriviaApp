@@ -103,7 +103,14 @@ public class RegisterFragment extends Fragment {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                createAccount(emailTxt.getText().toString(),passwordOneTxt.getText().toString(),passwordTwoTxt.getText().toString());
+                String email = emailTxt.getText().toString().trim();
+                String passOne = passwordOneTxt.getText().toString();
+                String passTwo = passwordTwoTxt.getText().toString();
+                if (!email.equals("") && !passOne.equals("") && !passTwo.equals(""))
+                    createAccount(email,passOne,passOne);
+                else {
+                    Toast.makeText(getContext(),"Hmm something in missing...",Toast.LENGTH_LONG).show();
+                }
             }
         });
         return view;
