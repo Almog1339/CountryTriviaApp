@@ -22,4 +22,6 @@
     <string name="welcome">Welcome</string>
     <string name="guest">Guest</string>
     <string name="logoff">Logoff</string>
+    <string name="score">Score:</string>
+    <string name="next_question">Next question</string>
 </resources>
