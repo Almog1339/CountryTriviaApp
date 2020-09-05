@@ -25,4 +25,11 @@
     <string name="score">Score:</string>
     <string name="next_question">Next question</string>
     <string name="flagimage">flag image</string>
+    <string name="Remember">Remember me?</string>
+    <string name="Forgot_password">Forgot Password</string>
+    <string name="facebook">Connect with Facebook</string>
+    <string name="Google">Connect with Google</string>
+    <string name="registerBtn"><![CDATA[<  Register]]></string>
+    <string name="cancel">cancel</string>
+    <string name="ready">I am ready!</string>
 </resources>
